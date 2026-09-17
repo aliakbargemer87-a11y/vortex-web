@@ -1,173 +1,372 @@
+```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Projects | VORTEX</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <title>طراحی سایت ستایش | VORTEX</title>
 
-<style>
+    <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Vazirmatn',sans-serif;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body{
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0b0b;
+            color: #fff;
+            line-height: 1.8;
+        }
 
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:#050505;
-overflow:hidden;
-color:white;
-position:relative;
+        /* صفحه اصلی */
 
-}
+        .page {
+            width: 100%;
+            max-width: 1150px;
+            margin: auto;
+            padding: 30px 20px 80px;
+        }
 
-/* پس زمینه */
+        /* هدر */
 
-body::before{
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 70px;
+        }
 
-content:"";
-position:absolute;
-width:700px;
-height:700px;
-background:#2563eb;
-filter:blur(220px);
-opacity:.15;
-animation:move 10s infinite alternate;
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
 
-}
+        .back-btn {
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid #333;
+            padding: 9px 18px;
+            border-radius: 10px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
 
-@keyframes move{
+        .back-btn:hover {
+            background: #fff;
+            color: #000;
+        }
 
-0%{transform:translate(-250px,-150px);}
-100%{transform:translate(250px,150px);}
+        /* عنوان */
 
-}
+        .hero {
+            margin-bottom: 45px;
+        }
 
-/* کارت */
+        .small-title {
+            color: #777;
+            font-size: 12px;
+            letter-spacing: 3px;
+            direction: ltr;
+            margin-bottom: 10px;
+        }
 
-.card{
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
 
-position:relative;
-z-index:2;
-width:750px;
-padding:60px;
-text-align:center;
-border-radius:25px;
+        .hero p {
+            max-width: 700px;
+            color: #999;
+            font-size: 16px;
+        }
 
-background:rgba(255,255,255,.05);
+        /* تصویر نمونه کار */
 
-backdrop-filter:blur(20px);
+        .project-image {
+            width: 100%;
+            height: 600px;
+            background: #151515;
+            border: 1px solid #292929;
+            border-radius: 22px;
+            overflow: hidden;
+            margin-bottom: 45px;
+        }
 
-border:1px solid rgba(255,255,255,.08);
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
 
-box-shadow:0 0 60px rgba(37,99,235,.25);
+        /* اطلاعات پروژه */
 
-animation:fade 1s;
+        .project-info {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+        }
 
-}
+        .about h2,
+        .details h2 {
+            font-size: 22px;
+            margin-bottom: 18px;
+        }
 
-@keyframes fade{
+        .about p {
+            color: #999;
+            font-size: 15px;
+            line-height: 2.1;
+        }
 
-from{
-opacity:0;
-transform:translateY(40px);
-}
+        /* جزئیات */
 
-to{
-opacity:1;
-transform:translateY(0);
-}
+        .details {
+            border-right: 1px solid #292929;
+            padding-right: 35px;
+        }
 
-}
+        .detail {
+            margin-bottom: 25px;
+        }
 
-.logo{
+        .detail span {
+            display: block;
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
 
-font-size:55px;
-font-weight:900;
-letter-spacing:8px;
-margin-bottom:30px;
+        .detail strong {
+            font-size: 15px;
+        }
 
-}
+        /* تکنولوژی */
 
-h1{
+        .technologies {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
 
-font-size:42px;
-margin-bottom:25px;
+        .technologies span {
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 5px 10px;
+            color: #bbb;
+            font-size: 12px;
+        }
 
-}
+        /* فوتر */
 
-span{
+        footer {
+            margin-top: 80px;
+            padding-top: 25px;
+            border-top: 1px solid #222;
+            text-align: center;
+            color: #555;
+            font-size: 12px;
+        }
 
-color:#2563eb;
+        /* موبایل */
 
-}
+        @media (max-width: 768px) {
 
-p{
+            .page {
+                padding: 20px 15px 60px;
+            }
 
-font-size:20px;
-line-height:2;
-color:#bbb;
+            header {
+                margin-bottom: 45px;
+            }
 
-}
+            .hero h1 {
+                font-size: 34px;
+            }
 
-.btn{
+            .hero p {
+                font-size: 14px;
+            }
 
-display:inline-block;
-margin-top:45px;
-padding:15px 45px;
-background:#2563eb;
-color:#fff;
-text-decoration:none;
-border-radius:50px;
-transition:.35s;
+            .project-image {
+                height: 300px;
+                border-radius: 15px;
+            }
 
-}
+            .project-info {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
 
-.btn:hover{
+            .details {
+                border-right: none;
+                border-top: 1px solid #292929;
+                padding-right: 0;
+                padding-top: 30px;
+            }
 
-transform:translateY(-5px);
-box-shadow:0 0 25px #2563eb;
+        }
 
-}
-
-</style>
+    </style>
 
 </head>
 
 <body>
 
-<div class="card">
+    <div class="page">
 
-<div class="logo">VORTEX</div>
+        <!-- Header -->
 
-<h1>🚀 پروژه‌ها <span>به‌زودی</span></h1>
+        <header>
 
-<p>
+            <div class="logo">
+                VORTEX
+            </div>
 
-این پروژه‌ها به صورت محلی توسعه داده شده‌اند
-<br><br>
+            <!-- لینک برگشت به سایت اصلی -->
+            <a href="index.html" class="back-btn">
+                ← بازگشت
+            </a>
 
-نسخه آنلاین و قابل مشاهده آن‌ها
-به‌زودی روی هاست اختصاصی منتشر خواهد شد.
+        </header>
 
-</p>
 
-<a href="index.html" class="btn">
-بازگشت به صفحه اصلی
-</a>
+        <!-- عنوان پروژه -->
 
-</div>
+        <section class="hero">
+
+            <div class="small-title">
+                PROJECT 01
+            </div>
+
+            <h1>
+                طراحی سایت ستایش
+            </h1>
+
+            <p>
+                طراحی و توسعه یک وب‌سایت شخصی و حرفه‌ای
+                برای نمایش نمونه‌کارها، گالری تصاویر و معرفی صاحب سایت.
+            </p>
+
+        </section>
+
+
+        <!-- تصویر نمونه کار -->
+
+        <section class="project-image">
+
+            <!--
+                عکس سایت ستایش را داخل پوشه images قرار بده
+                و اسم آن را setayesh.jpg بگذار
+            -->
+
+            <img
+                src="images/setayesh.jpg"
+                alt="نمونه کار طراحی سایت ستایش"
+            >
+
+        </section>
+
+
+        <!-- اطلاعات پروژه -->
+
+        <section class="project-info">
+
+
+            <!-- توضیحات -->
+
+            <div class="about">
+
+                <h2>
+                    درباره پروژه
+                </h2>
+
+                <p>
+                    این پروژه با هدف ایجاد یک وب‌سایت شخصی،
+                    مدرن و حرفه‌ای طراحی شده است.
+                    تمرکز اصلی سایت روی معرفی، نمایش تصاویر
+                    و ارائه یک تجربه کاربری ساده و مرتب بوده است.
+                </p>
+
+            </div>
+
+
+            <!-- جزئیات -->
+
+            <div class="details">
+
+                <h2>
+                    جزئیات
+                </h2>
+
+
+                <div class="detail">
+
+                    <span>
+                        نوع پروژه
+                    </span>
+
+                    <strong>
+                        وب‌سایت شخصی
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <span>
+                        طراحی و توسعه
+                    </span>
+
+                    <strong>
+                        VORTEX
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <span>
+                        تکنولوژی‌ها
+                    </span>
+
+                    <div class="technologies">
+
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+
+        <footer>
+
+            © 2026 VORTEX — Web Design & Development
+
+        </footer>
+
+    </div>
 
 </body>
+
 </html>
+```
