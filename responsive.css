@@ -1,4 +1,4 @@
-```css
+
 /* =========================================
    VORTEX | Responsive Design
    ========================================= */
@@ -311,4 +311,15 @@
     }
 
 }
-```
+@media screen and (max-width: 600px) {
+    .hero-image {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-image img {
+        position: relative;
+        z-index: 2;
+        display: block;
+    }
+}
