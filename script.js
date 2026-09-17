@@ -6,24 +6,19 @@
 
 /* Loader */
 
-window.addEventListener("load",()=>{
-
+document.addEventListener("DOMContentLoaded", () => {
     const loader = document.querySelector(".loader");
 
-    setTimeout(()=>{
+    if (!loader) return;
 
-        loader.style.opacity="0";
+    setTimeout(() => {
+        loader.style.opacity = "0";
 
-        setTimeout(()=>{
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 300);
 
-            loader.style.display="none";
-
-        },500);
-
-
-    },1000);
-
-
+    }, 700);
 });
 
 
