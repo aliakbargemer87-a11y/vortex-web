@@ -323,7 +323,7 @@
         display: block;
     }
 }
-```css
+
 @media screen and (max-width: 600px) {
 
     .hero-image {
@@ -349,4 +349,3 @@
     }
 
 }
-```
