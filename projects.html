@@ -90,19 +90,26 @@
 
         /* تصویر نمونه کار */
 
-  .project-image {
+.project-image {
     width: 100%;
-    height: 300px;
-    overflow: hidden;
+    min-height: 350px;
     background: #111;
-    border-radius: 15px;
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    box-sizing: border-box;
 }
 
 .project-image img {
     width: 100%;
-    height: 100%;
+    height: auto;
+    max-height: 500px;
     object-fit: contain;
     display: block;
+    border-radius: 10px;
 }
         /* اطلاعات پروژه */
 
@@ -259,20 +266,9 @@
 
         <!-- تصویر نمونه کار -->
 
-        <section class="project-image">
-
-            <!--
-                عکس سایت ستایش را داخل پوشه images قرار بده
-                و اسم آن را setayesh.jpg بگذار
-            -->
-
-            <img
-                src="setayesh.jpg"
-                alt="نمونه کار طراحی سایت ستایش"
-            >
-
-        </section>
-
+       <div class="project-image">
+    <img src="images/setayesh.jpg" alt="نمونه کار سایت ستایش">
+</div>
 
         <!-- اطلاعات پروژه -->
 
