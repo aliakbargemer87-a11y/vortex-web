@@ -1,0 +1,309 @@
+/* ==========================
+   VORTEX Responsive Design
+========================== */
+
+
+/* Tablet */
+
+@media(max-width:1024px){
+
+
+.navbar{
+
+    width:90%;
+
+}
+
+
+.hero{
+
+    flex-direction:column-reverse;
+
+    text-align:center;
+
+    padding-top:120px;
+
+}
+
+
+.hero-text{
+
+    max-width:700px;
+
+}
+
+
+.hero-text h1{
+
+    font-size:55px;
+
+}
+
+
+.hero-image img{
+
+    width:320px;
+
+    height:320px;
+
+}
+
+
+
+.cards{
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+}
+
+
+
+#projects{
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+}
+
+
+.buttons{
+
+    justify-content:center;
+
+}
+
+
+.social{
+
+    justify-content:center;
+
+}
+
+
+}
+
+
+
+
+
+/* Mobile */
+
+@media(max-width:600px){
+
+
+
+.navbar{
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+
+.navbar ul{
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+
+
+.logo{
+
+    font-size:28px;
+
+}
+
+
+
+.hero{
+
+    width:90%;
+
+}
+
+
+.hero-text h1{
+
+    font-size:40px;
+
+}
+
+
+.hero-text h2{
+
+    font-size:25px;
+
+}
+
+
+
+.hero-text p{
+
+    font-size:16px;
+
+}
+
+
+
+.hero-image img{
+
+    width:250px;
+
+    height:250px;
+
+}
+
+
+
+.buttons{
+
+    flex-direction:column;
+
+}
+
+
+.btn,
+.btn2{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+
+
+
+section{
+
+    margin:80px auto;
+
+}
+
+
+
+section h2{
+
+    font-size:35px;
+
+}
+
+
+
+.cards{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+#projects{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.project-box{
+
+    padding:25px;
+
+}
+
+
+
+.bmw{
+
+    padding:50px 20px;
+
+}
+
+
+
+.bmw p{
+
+    font-size:16px;
+
+}
+
+
+
+.social a{
+
+    width:50px;
+
+    height:50px;
+
+}
+
+
+}
+
+
+
+
+
+
+/* Small Phones */
+
+
+@media(max-width:380px){
+
+
+.hero-text h1{
+
+    font-size:32px;
+
+}
+
+
+.hero-image img{
+
+    width:210px;
+
+    height:210px;
+
+}
+
+
+.navbar ul{
+
+    font-size:14px;
+
+}
+
+
+}
+@media(max-width:600px){
+
+
+.service-container{
+
+grid-template-columns:1fr;
+
+}
+
+
+}
+
+
+@media(max-width:1024px){
+
+
+.service-container{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+}

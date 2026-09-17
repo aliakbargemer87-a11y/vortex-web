@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Projects | VORTEX</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Vazirmatn',sans-serif;
+}
+
+body{
+
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#050505;
+overflow:hidden;
+color:white;
+position:relative;
+
+}
+
+/* پس زمینه */
+
+body::before{
+
+content:"";
+position:absolute;
+width:700px;
+height:700px;
+background:#2563eb;
+filter:blur(220px);
+opacity:.15;
+animation:move 10s infinite alternate;
+
+}
+
+@keyframes move{
+
+0%{transform:translate(-250px,-150px);}
+100%{transform:translate(250px,150px);}
+
+}
+
+/* کارت */
+
+.card{
+
+position:relative;
+z-index:2;
+width:750px;
+padding:60px;
+text-align:center;
+border-radius:25px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:0 0 60px rgba(37,99,235,.25);
+
+animation:fade 1s;
+
+}
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+.logo{
+
+font-size:55px;
+font-weight:900;
+letter-spacing:8px;
+margin-bottom:30px;
+
+}
+
+h1{
+
+font-size:42px;
+margin-bottom:25px;
+
+}
+
+span{
+
+color:#2563eb;
+
+}
+
+p{
+
+font-size:20px;
+line-height:2;
+color:#bbb;
+
+}
+
+.btn{
+
+display:inline-block;
+margin-top:45px;
+padding:15px 45px;
+background:#2563eb;
+color:#fff;
+text-decoration:none;
+border-radius:50px;
+transition:.35s;
+
+}
+
+.btn:hover{
+
+transform:translateY(-5px);
+box-shadow:0 0 25px #2563eb;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="logo">VORTEX</div>
+
+<h1>🚀 پروژه‌ها <span>به‌زودی</span></h1>
+
+<p>
+
+این پروژه‌ها به صورت محلی توسعه داده شده‌اند
+<br><br>
+
+نسخه آنلاین و قابل مشاهده آن‌ها
+به‌زودی روی هاست اختصاصی منتشر خواهد شد.
+
+</p>
+
+<a href="index.html" class="btn">
+بازگشت به صفحه اصلی
+</a>
+
+</div>
+
+</body>
+</html>
