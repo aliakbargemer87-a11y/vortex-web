@@ -86,36 +86,6 @@ body{
     }
 
 }
-
-
-/* Navbar */
-
-
-header{
-
-    position:fixed;
-    width:100%;
-    top:0;
-    z-index:1000;
-
-}
-
-
-.navbar{
-
-    width:90%;
-    margin:auto;
-    padding:20px 0;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    backdrop-filter:blur(15px);
-
-}
-
-
 /* VORTEX Logo */
 
 
