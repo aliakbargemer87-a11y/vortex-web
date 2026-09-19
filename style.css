@@ -1716,3 +1716,41 @@ language:hover {
     border-color: #ffffff !important;
     transform: translateY(-2px) !important;
 }
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#language {
+    width: 55px !important;
+    height: 38px !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: transparent !important;
+    color: white !important;
+
+    border: 1px solid #555 !important;
+    border-radius: 10px !important;
+
+    font-family: inherit !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+}
+
+#language:hover {
+    background: white !important;
+    color: black !important;
+    border-color: white !important;
+    transform: translateY(-2px) !important;
+}
