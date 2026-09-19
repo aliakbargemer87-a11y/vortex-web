@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 
@@ -9,7 +10,7 @@
     <title>نمونه‌کارها | VORTEX</title>
 
     <meta name="description"
-        content="نمونه‌کارهای طراحی سایت VORTEX | طراحی سایت شخصی، شرکتی، فروشگاهی و معرفی کسب‌وکار">
+        content="نمونه‌کارهای طراحی سایت VORTEX | پروژه‌های شخصی، عکاسی، شرکتی و فروشگاهی">
 
     <style>
 
@@ -88,7 +89,7 @@
             font-size: 16px;
         }
 
-        /* FILTER */
+        /* FILTERS */
 
         .filters {
             display: flex;
@@ -318,6 +319,10 @@
                 همه پروژه‌ها
             </button>
 
+            <button class="filter-btn" data-filter="personal">
+                شخصی
+            </button>
+
             <button class="filter-btn" data-filter="photography">
                 عکاسی
             </button>
@@ -330,10 +335,6 @@
                 فروشگاهی
             </button>
 
-            <button class="filter-btn" data-filter="business">
-                معرفی کسب‌وکار
-            </button>
-
         </div>
 
 
@@ -344,7 +345,9 @@
 
             <!-- PROJECT 01 -->
 
-            <article class="project-card" data-category="photography">
+            <article
+                class="project-card"
+                data-category="personal photography">
 
                 <div class="project-image">
 
@@ -357,7 +360,7 @@
                 <div class="project-content">
 
                     <div class="project-category">
-                        PHOTOGRAPHY
+                        PERSONAL / PHOTOGRAPHY
                     </div>
 
                     <h2>
@@ -382,7 +385,7 @@
             </article>
 
 
-            <!-- پروژه‌های آینده را از اینجا اضافه کن -->
+            <!-- پروژه‌های بعدی را اینجا اضافه می‌کنیم -->
 
 
         </section>
@@ -442,13 +445,14 @@
 
                 projectCards.forEach(card => {
 
-                    const category =
-                        card.getAttribute("data-category");
+                    const categories =
+                        card.getAttribute("data-category")
+                            .split(" ");
 
 
                     if (
                         filter === "all" ||
-                        category === filter
+                        categories.includes(filter)
                     ) {
 
                         card.style.display = "block";
@@ -485,3 +489,4 @@
 </body>
 
 </html>
+
