@@ -1,0 +1,489 @@
+```html
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>نمونه‌کارها | VORTEX</title>
+
+    <meta name="description"
+        content="نمونه‌کارهای طراحی سایت VORTEX | طراحی سایت شخصی، شرکتی، فروشگاهی و معرفی کسب‌وکار">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0b0b;
+            color: #fff;
+            line-height: 1.8;
+        }
+
+        .page {
+            width: 100%;
+            max-width: 1150px;
+            margin: auto;
+            padding: 30px 20px 80px;
+        }
+
+        /* HEADER */
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .back-btn {
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid #333;
+            padding: 9px 18px;
+            border-radius: 10px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* HERO */
+
+        .hero {
+            margin-bottom: 45px;
+        }
+
+        .small-title {
+            color: #666;
+            font-size: 12px;
+            letter-spacing: 3px;
+            direction: ltr;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            color: #888;
+            font-size: 16px;
+        }
+
+        /* FILTER */
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            background: transparent;
+            color: #999;
+            border: 1px solid #2d2d2d;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .filter-btn:hover {
+            color: #fff;
+            border-color: #555;
+        }
+
+        .filter-btn.active {
+            background: #fff;
+            color: #000;
+            border-color: #fff;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #111;
+            border: 1px solid #202020;
+            border-radius: 18px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #383838;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 300px;
+            background: #0d0d0d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-category {
+            color: #666;
+            font-size: 11px;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .project-content h2 {
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: #888;
+            font-size: 14px;
+            line-height: 2;
+            margin-bottom: 20px;
+        }
+
+        .project-btn {
+            display: inline-block;
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid #333;
+            padding: 8px 16px;
+            border-radius: 9px;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .project-btn:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* EMPTY */
+
+        .empty-message {
+            display: none;
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+            border: 1px solid #202020;
+            border-radius: 15px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            margin-top: 80px;
+            padding-top: 25px;
+            border-top: 1px solid #222;
+            text-align: center;
+            color: #555;
+            font-size: 12px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+            .page {
+                padding: 20px 15px 60px;
+            }
+
+            header {
+                margin-bottom: 55px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .filters {
+                gap: 8px;
+            }
+
+            .filter-btn {
+                padding: 8px 13px;
+                font-size: 12px;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .project-image {
+                height: 240px;
+            }
+
+            .project-content {
+                padding: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="page">
+
+        <!-- HEADER -->
+
+        <header>
+
+            <div class="logo">
+                VORTEX
+            </div>
+
+            <a href="index.html" class="back-btn">
+                ← بازگشت
+            </a>
+
+        </header>
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="small-title">
+                PORTFOLIO
+            </div>
+
+            <h1>
+                نمونه‌کارها
+            </h1>
+
+            <p>
+                مجموعه‌ای از پروژه‌های طراحی و توسعه وب که توسط VORTEX
+                طراحی و اجرا شده‌اند.
+            </p>
+
+        </section>
+
+
+        <!-- FILTERS -->
+
+        <div class="filters">
+
+            <button class="filter-btn active" data-filter="all">
+                همه پروژه‌ها
+            </button>
+
+            <button class="filter-btn" data-filter="photography">
+                عکاسی
+            </button>
+
+            <button class="filter-btn" data-filter="corporate">
+                شرکتی
+            </button>
+
+            <button class="filter-btn" data-filter="shop">
+                فروشگاهی
+            </button>
+
+            <button class="filter-btn" data-filter="business">
+                معرفی کسب‌وکار
+            </button>
+
+        </div>
+
+
+        <!-- PROJECTS -->
+
+        <section class="projects">
+
+
+            <!-- PROJECT 01 -->
+
+            <article class="project-card" data-category="photography">
+
+                <div class="project-image">
+
+                    <img
+                        src="setayesh.jpg"
+                        alt="نمونه کار طراحی سایت ستایش">
+
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-category">
+                        PHOTOGRAPHY
+                    </div>
+
+                    <h2>
+                        طراحی سایت ستایش
+                    </h2>
+
+                    <p>
+                        طراحی یک وب‌سایت شخصی و حرفه‌ای برای معرفی
+                        عکاس و نمایش نمونه‌کارها و گالری تصاویر.
+                    </p>
+
+                    <a
+                        href="setayesh.html"
+                        class="project-btn">
+
+                        مشاهده پروژه ←
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- پروژه‌های آینده را از اینجا اضافه کن -->
+
+
+        </section>
+
+
+        <!-- EMPTY MESSAGE -->
+
+        <div class="empty-message">
+            هنوز پروژه‌ای در این دسته قرار نگرفته است.
+        </div>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            © 2026 VORTEX — Web Design & Development
+
+        </footer>
+
+    </div>
+
+
+    <script>
+
+        const filterButtons =
+            document.querySelectorAll(".filter-btn");
+
+        const projectCards =
+            document.querySelectorAll(".project-card");
+
+        const emptyMessage =
+            document.querySelector(".empty-message");
+
+
+        filterButtons.forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const filter =
+                    button.getAttribute("data-filter");
+
+
+                /* تغییر دکمه فعال */
+
+                filterButtons.forEach(btn => {
+                    btn.classList.remove("active");
+                });
+
+                button.classList.add("active");
+
+
+                let visibleProjects = 0;
+
+
+                /* فیلتر پروژه‌ها */
+
+                projectCards.forEach(card => {
+
+                    const category =
+                        card.getAttribute("data-category");
+
+
+                    if (
+                        filter === "all" ||
+                        category === filter
+                    ) {
+
+                        card.style.display = "block";
+
+                        visibleProjects++;
+
+                    } else {
+
+                        card.style.display = "none";
+
+                    }
+
+                });
+
+
+                /* نمایش پیام در صورت نبود پروژه */
+
+                if (visibleProjects === 0) {
+
+                    emptyMessage.style.display = "block";
+
+                } else {
+
+                    emptyMessage.style.display = "none";
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
+```
