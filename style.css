@@ -1322,64 +1322,70 @@ body::before {
         right: 20px;
     }
 }
-.projects-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+.buttons .projects-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 
-    margin-top: 25px;
+    width: auto !important;
+    min-width: 160px !important;
 
-    padding: 13px 26px;
+    padding: 14px 28px !important;
+    margin: 0 !important;
 
-    background: transparent;
-    color: #ffffff;
+    background: transparent !important;
+    color: #ffffff !important;
 
-    border: 1px solid #2563eb;
-    border-radius: 12px;
+    border: 1px solid #2563eb !important;
+    border-radius: 14px !important;
 
-    text-decoration: none;
+    text-decoration: none !important;
 
-    font-family: "Vazirmatn", sans-serif;
-    font-size: 15px;
-    font-weight: 600;
+    font-family: "Vazirmatn", sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
 
-    transition: all 0.3s ease;
+    position: relative !important;
+    overflow: hidden !important;
 
-    position: relative;
-    overflow: hidden;
+    transition: all 0.3s ease !important;
 }
 
-.projects-btn::before {
-    content: "";
+.buttons .projects-btn::before {
+    content: "" !important;
 
-    position: absolute;
+    position: absolute !important;
 
-    width: 0;
-    height: 100%;
+    width: 0 !important;
+    height: 100% !important;
 
-    top: 0;
-    right: 0;
+    top: 0 !important;
+    right: 0 !important;
 
-    background: #2563eb;
+    background: #2563eb !important;
 
-    transition: width 0.35s ease;
+    transition: width 0.35s ease !important;
 
-    z-index: 0;
+    z-index: 0 !important;
 }
 
-.projects-btn span {
-    position: relative;
-    z-index: 1;
+.buttons .projects-btn span {
+    position: relative !important;
+    z-index: 2 !important;
 }
 
-.projects-btn:hover::before {
-    width: 100%;
+.buttons .projects-btn:hover {
+    color: #ffffff !important;
+
+    transform: translateY(-4px) !important;
+
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.25) !important;
 }
 
-.projects-btn:hover {
-    color: #ffffff;
+.buttons .projects-btn:hover::before {
+    width: 100% !important;
+}
 
-    transform: translateY(-3px);
-
-    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.25);
+.buttons .projects-btn:active {
+    transform: translateY(-1px) !important;
 }
