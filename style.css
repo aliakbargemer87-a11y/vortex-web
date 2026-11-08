@@ -92,10 +92,75 @@ header {
     margin: auto;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 18px;
 }
 
+/* عدد 19 */
+.patriot-number {
+    display: flex;
+    direction: ltr;
+    align-items: center;
+    justify-content: center;
+    height: 210px;
+    font-family: Georgia, serif;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.number-one {
+    font-size: 190px;
+    color: #e5e5e5;
+    z-index: 2;
+}
+
+.number-nine {
+    font-size: 190px;
+    margin-left: -35px;
+    background: linear-gradient(
+        155deg,
+        #dedede 0%,
+        #dedede 46%,
+        #ed101b 47%,
+        #ed101b 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* شعار ایران */
+.patriot-text {
+    color: #e5e5e5;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: -5px;
+}
+
+/* لوگو */
+.logo {
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: 8px;
+    color: white;
+    margin-top: 5px;
+}
+
+/* دکمه زبان */
+#language {
+    padding: 12px 30px;
+    border: 1px solid #2563eb;
+    border-radius: 18px;
+    background: #111;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
 /* ==========================
    LOGO
