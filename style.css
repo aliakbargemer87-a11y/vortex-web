@@ -1454,3 +1454,53 @@ body::before {
 .buttons .projects-btn:active {
     transform: translateY(-1px) !important;
 }
+
+.patriot-number {
+    position: relative;
+    width: 240px;
+    height: 190px;
+    margin: 0 auto;
+    direction: ltr;
+    font-family: Georgia, serif;
+    font-weight: 900;
+}
+
+.patriot-number span {
+    position: absolute;
+    font-size: 190px;
+    line-height: 1;
+}
+
+.patriot-number .nine {
+    left: 65px;
+    top: 0;
+    z-index: 1;
+
+    background: linear-gradient(
+        to bottom,
+        #eeeeee 0%,
+        #eeeeee 48%,
+        #e51b2b 49%,
+        #e51b2b 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.patriot-number .one {
+    left: 0;
+    top: 0;
+    z-index: 2;
+    color: #eeeeee;
+    text-shadow: 2px 3px 5px #555;
+}
+
+@media (max-width: 600px) {
+    .patriot-number {
+        transform: scale(.85);
+        transform-origin: top center;
+        margin-bottom: -25px;
+    }
+}
