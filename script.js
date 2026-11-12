@@ -1,315 +1,141 @@
+
 /* ==========================
-   VORTEX Portfolio
-   Ali Akbar | JavaScript
+   VORTEX MAIN SCRIPT
 ========================== */
 
+// Typing Animation
+const typingElement = document.querySelector(".typing");
 
-/* Loader */
+const typingTexts = {
+    fa: [
+        "طراح وب",
+        "توسعه‌دهنده فرانت‌اند",
+        "علاقه‌مند به هوش مصنوعی"
+    ],
+    en: [
+        "Web Designer",
+        "Frontend Developer",
+        "AI Enthusiast"
+    ]
+};
 
-document.addEventListener("DOMContentLoaded", () => {
+let typingIndex = 0;
+let charIndex = 0;
+let deleting = false;
+let typingTimer;
+
+function startTyping() {
+    if (!typingElement) return;
+
+    clearTimeout(typingTimer);
+
+    const lang = document.documentElement.lang === "en" ? "en" : "fa";
+    const texts = typingTexts[lang];
+
+    const currentText = texts[typingIndex];
+
+    typingElement.textContent = currentText.substring(0, charIndex);
+
+    let delay = deleting ? 45 : 100;
+
+    if (!deleting && charIndex < currentText.length) {
+        charIndex++;
+    } else if (!deleting && charIndex === currentText.length) {
+        deleting = true;
+        delay = 1400;
+    } else if (deleting && charIndex > 0) {
+        charIndex--;
+    } else {
+        deleting = false;
+        typingIndex = (typingIndex + 1) % texts.length;
+        delay = 350;
+    }
+
+    typingTimer = setTimeout(startTyping, delay);
+}
+
+function restartTyping() {
+    clearTimeout(typingTimer);
+    typingIndex = 0;
+    charIndex = 0;
+    deleting = false;
+    startTyping();
+}
+
+startTyping();
+
+document.addEventListener("languageChanged", restartTyping);
+
+
+// Page Loader
+window.addEventListener("load", () => {
     const loader = document.querySelector(".loader");
 
-    if (!loader) return;
-
-    setTimeout(() => {
-        loader.style.opacity = "0";
-
+    if (loader) {
         setTimeout(() => {
-            loader.style.display = "none";
-        }, 300);
-
-    }, 700);
+            loader.classList.add("hide");
+        }, 500);
+    }
 });
 
 
+// Statistics Counter
+const counters = document.querySelectorAll(".counter");
 
-/* Typing Effect */
+const counterObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
 
+        const counter = entry.target;
+        const original = counter.textContent.trim();
+        const target = parseInt(original.replace(/[^0-9]/g, ""), 10);
 
-const text = [
+        if (isNaN(target)) return;
 
-    "Web Developer",
+        const prefix = original.startsWith("+") ? "+" : "";
+        const duration = 1500;
+        const startTime = performance.now();
 
-    "Front-End Designer",
+        function updateCounter(now) {
+            const progress = Math.min((now - startTime) / duration, 1);
+            const value = Math.floor(progress * target);
 
-    "AI Enthusiast"
+            counter.textContent = prefix + value.toLocaleString(
+                document.documentElement.lang === "fa" ? "fa-IR" : "en-US"
+            );
 
-];
-
-
-let index = 0;
-
-let charIndex = 0;
-
-let deleting = false;
-
-
-const typing = document.querySelector(".typing");
-
-
-function typeEffect(){
-
-
-    let current = text[index];
-
-
-    if(!deleting){
-
-
-        typing.textContent =
-        current.substring(0,charIndex++);
-
-
-        if(charIndex > current.length){
-
-            deleting=true;
-
-            setTimeout(typeEffect,1500);
-
-            return;
-
-        }
-
-
-    }else{
-
-
-        typing.textContent =
-        current.substring(0,charIndex--);
-
-
-        if(charIndex < 0){
-
-            deleting=false;
-
-            index++;
-
-
-            if(index >= text.length){
-
-                index=0;
-
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.textContent = original;
             }
-
-
         }
 
+        requestAnimationFrame(updateCounter);
+        observer.unobserve(counter);
+    });
+}, {
+    threshold: 0.5
+});
 
-    }
+counters.forEach(counter => counterObserver.observe(counter));
 
 
-    setTimeout(typeEffect,deleting ? 50 : 100);
+// Back To Top
+const topBtn = document.getElementById("topBtn");
 
+if (topBtn) {
+
+    window.addEventListener("scroll", () => {
+        topBtn.classList.toggle("show", window.scrollY > 300);
+    });
+
+    topBtn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
 
 }
 
-
-typeEffect();
-
-
-
-
-/* Navbar Scroll Effect */
-
-
-const navbar =
-document.querySelector(".navbar");
-
-
-window.addEventListener("scroll",()=>{
-
-
-    if(window.scrollY > 50){
-
-
-        navbar.style.background=
-        "rgba(10,10,10,.85)";
-
-
-        navbar.style.borderRadius=
-        "20px";
-
-
-    }else{
-
-
-        navbar.style.background=
-        "transparent";
-
-
-    }
-
-
-});
-
-
-
-
-
-/* Reveal Animation */
-
-
-const sections =
-document.querySelectorAll("section");
-
-
-const observer =
-new IntersectionObserver((entries)=>{
-
-
-    entries.forEach(entry=>{
-
-
-        if(entry.isIntersecting){
-
-
-            entry.target.style.opacity="1";
-
-            entry.target.style.transform=
-            "translateY(0)";
-
-
-        }
-
-
-    });
-
-
-},
-{
-
-    threshold:.2
-
-});
-
-
-
-sections.forEach(section=>{
-
-
-    section.style.opacity="0";
-
-    section.style.transform=
-    "translateY(50px)";
-
-    section.style.transition=
-    "1s";
-
-
-    observer.observe(section);
-
-
-});
-
-
-
-
-
-/* Smooth Link Scroll */
-
-
-document.querySelectorAll("a").forEach(link=>{
-
-
-    link.addEventListener("click",(e)=>{
-
-
-        const href =
-        link.getAttribute("href");
-
-
-        if(href && href.startsWith("#")){
-
-
-            e.preventDefault();
-
-
-            document.querySelector(href)
-            ?.scrollIntoView({
-
-                behavior:"smooth"
-
-            });
-
-
-        }
-
-
-    });
-
-
-});
-/* Mobile Menu */
-
-
-const menuBtn =
-document.querySelector(".menu-btn");
-
-
-const menu =
-document.querySelector(".navbar ul");
-
-
-menuBtn.addEventListener("click",()=>{
-
-
-menu.classList.toggle("active");
-
-
-});
-/* Back To Top */
-
-
-const topBtn =
-document.getElementById("topBtn");
-
-
-window.addEventListener("scroll",()=>{
-
-
-if(window.scrollY > 500){
-
-topBtn.style.display="block";
-
-}else{
-
-topBtn.style.display="none";
-
-}
-
-
-});
-
-
-
-topBtn.addEventListener("click",()=>{
-
-
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
-
-});
-
-
-});/* Custom Cursor */
-
-
-const cursor =
-document.querySelector(".cursor");
-
-
-document.addEventListener("mousemove",(e)=>{
-
-
-cursor.style.left =
-e.clientX + "px";
-
-
-cursor.style.top =
-e.clientY + "px";
-
-
-});
