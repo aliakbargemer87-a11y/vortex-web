@@ -75,7 +75,7 @@ langBtn.textContent="EN";
 
 
 document.querySelector(".hero-text h3")
-.textContent="سلام 👋";
+.textContent="درود 👋";
 
 
 
